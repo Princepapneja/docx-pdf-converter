@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
 
-app.post("/convert", upload.single('file'), (req, res) => {
+app.post("https://docx-pdf-converter.vercel.app/convert", upload.single('file'), (req, res) => {
     let outputFilePath = "pdf/output.pdf";
     docxToPdf(req.file.path, outputFilePath, (err, result) => {
         if (err) {
